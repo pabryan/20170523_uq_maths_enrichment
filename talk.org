@@ -1,0 +1,20 @@
+#+TITLE: \(\infty + 1\) and digital music?
+#+BEAMER_HEADER: \subtitle{UQ Maths Enrichment
+#+AUTHOR: Paul Bryan
+#+EMAIL: pabryan@gmail.com
+#+DATE: May 23 2017
+
+#+SETUPFILE: ~/.emacs.d/org-templates/bibliography.org
+
+#+OPTIONS: H:2 toc:t
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: Boadilla
+#+LaTeX_HEADER: \AtBeginSection[]{\begin{frame}\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+
+#+LaTeX_HEADER: \input{local_definitions}
+
+* Introduction
+* Fourier, heat conduction and signal processing
+* Cantor and Fourier series
+* Ordinals and Cardinals
