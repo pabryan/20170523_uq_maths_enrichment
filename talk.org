@@ -97,4 +97,67 @@ Let \(u(x, t) = \sum_{n=0}^{\infty} c_n e^{-n^2 t} \sin(n x)\) where \(\sum_{n=0
 - Does the series necessarily converge? \pause
 - Does \(T\) need to be continuous, differentiable, ...?
 * Cantor and Fourier series
+** Cantor
+*** Image
+  :PROPERTIES:
+  :BEAMER_col: 0.5
+  :END:
+
+#+CAPTION: Georg Cantor
+[[file:img/cantor.jpg]]
+
+*** Text
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+- Born March 3, 1845
+- Died January 6, 1918 \pause
+- Über die Ausdehnung eines Satzes aus der Theorie der trigonometrischen Reihen (On the extension of a theorem from the theory of trigonometric series) 1872
+- Grundlagen einer allgemeinen Mannigfaltigkeitslehre (Foundations of a General Theory of Aggregates) 1883
+** Uniqueness of Fourier Series (Riemann)
+*** Riemman
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+*If* \(f\) is continuous and for all \(x \in [0, 2\pi]\),
+\[
+f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
+\]
+
+*Then* \(c_n = c_n'\) and \(d_n = d_n'\) for every \(n\). \pause
+*** Suffices by linearity to show
+*If* \(\sum c_n \sin(nx) + d_n \cos(nx) = 0\) for all \(x \in [0, 2\pi]\)
+
+*Then* \(c_n = d_n = 0\) for every \(n\).
+
+** Uniqueness of Fourier Series (Cantor) I
+*** Cantor
+    :PROPERTIES:
+    :BEAMER_env: theorem
+    :END:
+*If* for all \(x \in [0, 2\pi]\) except at most finitely many \(x\),
+\[
+f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
+\]
+
+*Then* \(c_n = c_n'\) and \(d_n = d_n'\) for every \(n\).
+
+** Uniqueness of Fourier Series (Cantor) I: Proof
+- (Riemman) Let \(F(x) = \int \int f(x) dx = \frac{1}{2} (c_0 + d_0)x^2 - \sum_{n=1}^{\infty} \frac{1}{n^2} (c_n \sin(nx) + d_n \cos(nx))\) \pause
+- Then \(F''(x) = f(x) = 0\) (\(=0\) by assumption) hence \(F(x) = Ax + B\) \pause
+- But for all \(x\),
+  #+BEGIN_latex
+  \[
+  \begin{split}
+  0 &= f(x) = F(x) - \frac{1}{2} (c_0 + d_0)x^2 + (c_0 + d_0) \\
+  &= Ax + B - \frac{1}{2} (c_0 + d_0)x^2 + (c_0 + d_0) \\
+  &= (B + c_0 + d_0) + Ax - \frac{1}{2} (c_0 + d_0)x^2.
+  \end{split}
+  \]
+  #+END_latex
+  \pause
+- Therefore \(c_0 + d_0 = 0\), \(A = 0\) and \(B = 0\) \pause
+  - Either send \(x \to \infty\) or note polynomials have at most finitely many roots. \pause
+- Further arguments give \(c_n = d_n = 0\) (not difficult but too far from our purpose here)
 * Ordinals and Cardinals
