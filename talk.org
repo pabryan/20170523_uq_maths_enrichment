@@ -145,13 +145,12 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
 
 ** Uniqueness of Fourier Series (Cantor) I: Proof
 - (Riemman) Let \(F(x) = \int \int f(x) dx = \frac{1}{2} (c_0 + d_0)x^2 - \sum_{n=1}^{\infty} \frac{1}{n^2} (c_n \sin(nx) + d_n \cos(nx))\) \pause
-- Then \(F''(x) = f(x) = 0\) (\(=0\) by assumption) hence \(F(x) = Ax + B\) \pause
-- But for all \(x\),
+- Formally \(F''(x) = f(x) = 0\) (\(=0\) by assumption) hence \(F(x) = Ax + B\) \pause
+- But for all but at most finitely many \(x\),
   #+BEGIN_latex
   \[
   \begin{split}
   0 &= f(x) = F(x) - \frac{1}{2} (c_0 + d_0)x^2 + (c_0 + d_0) \\
-  &= Ax + B - \frac{1}{2} (c_0 + d_0)x^2 + (c_0 + d_0) \\
   &= (B + c_0 + d_0) + Ax - \frac{1}{2} (c_0 + d_0)x^2.
   \end{split}
   \]
