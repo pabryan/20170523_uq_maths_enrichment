@@ -203,3 +203,86 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
   - If \(X\) is a derived set of the \((n+1)\)-th kind, then \(X^{(n+1)}\) is finite.
   - Apply the same argument to \((X^{(n)})'\)
 * Ordinals and Cardinals
+** Higher Derived Sets
+*** The first infinite ordinal \(\omega\)
+\[
+X^{(\omega)} = \intersect_{n \in \NN} X^{(n)}
+\]
+\pause
+*** \(\infty + 1\)
+\[
+X^{(\omega + 1)} = (X^{(\omega)})'
+\]
+\pause
+\[
+X^{(\omega + 2)} = (X^{(\omega+1)})'
+\]
+\pause
+\[
+\vdots
+\]
+** Ordinal Numbers I
+*** Ordinal Number
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+- \(X\) is a set such that \(\forall x \in A\), \(x \subseteq A\)
+- \(X\) is well ordered: We can order \(X\) such that every subset \(Y \subseteq X\) has a least element. \pause
+*** Finite Ordinals
+- \(0 = \emptyset\) \quad \(0\) elements \pause
+- \(1 = \{\emptyset\}\) \quad \(1\) element \pause
+- \(2 = \{\emptyset, \{\emptyset\}\}\)  \quad \(2\) elements \pause
+- \(3 = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}\)  \quad \(3\) elements \pause
+- \quad \(\vdots\)
+- \(n+1 = n \union \{n\}\) \quad \(n+1\) elements
+- \quad \(\vdots\)
+** Ordinal Numbers II
+*** Limit Ordinal
+    :PROPERTIES:
+    :BEAMER_env: definition
+    :END:
+
+An ordinal \(X\) is a limit ordinal if \(X \ne Y + 1 := Y \union \{Y\}\) for any ordinal number \(Y\).
+
+\pause
+
+*** Examples
+
+- \(\omega = \union_{n \in \NN} n\), limit \pause
+- \(\omega + 1 = \omega \union \{\omega\}\),  not a limit \pause
+- \(1 + \omega = \union \{1 + n : n \in \NN\}\),  limit \pause
+- \(\omega^2 = \union_{n \in \NN} \omega \cdot n := \union_{n \in \NN} \underbrace{\omega + \cdots \omega}_{n \text{ times}} \), limit \pause
+*** Ordering - An Infinite Hierarchy of Infinities!
+
+\(0 \subset 1 \subset 2 \cdots \subset \omega \subset \omega + 1 \subset \cdots \omega \cdot 2 \subset \omega \cdot 3 \subset \cdots \omega^2 \subset \omega^3 \subset \cdots \omega^{\omega} \subset \cdots\)
+** Induction
+*** Induction
+
+If \(P(0)\) is true and \(P(n) \Rightarrow P(n+1)\), then \(P(m)\) is true for all \(m \in \NN\) \pause
+
+*** Example
+
+\(\NN\) is well ordered \pause
+
+- \(P(n)\): "every subset \(X \subset \NN\) such that \(j \in X\) for some \(j \leq n\) is well ordered" \pause
+- \(P(0)\) is true since if \(0 \in X\), \(0\) is the least element of \(X\), i.e., \(0 \leq x\) for every \(x \in X\) \pause
+- For the induction step, suppose \(P(n)\) is true and \(X\) is a set containing \(n + 1\) \pause
+- If \(n + 1\) is the least element we're done. \pause
+- Otherwise, there is some \(j < n + 1, j \in X\) and \(P(n)\) implies \(X\) has a least element
+
+** Transfinite induction
+
+*** Transfinite Induction
+
+*If* \(P(0)\) is true *and* \(P(\gamma)\) is true for all \(\gamma \subset \alpha \Rightarrow P(\alpha)\), *then* \(P(\beta)\) is true for all ordinals \(\beta\). \pause
+
+*** Examples
+
+- Ordinal Arithmetic: \(\alpha + 1 = \alpha \union 1, \dots, \alpha + (n + 1) = (\alpha + n) + 1, \dots,  \alpha +  \omega = \union_{n \in \omega} \alpha + n, \dots, \) \pause
+- Derived Sets: \(X^{(0)} = X\), \(X^{(\alpha)} = \intersect_{\beta < \alpha} X^{(\beta)}\) \pause
+
+*** Cantors Uniqueness Theorem III
+
+If \(X^{(\alpha)}\) is finite for some ordinal \(\alpha\) and the Fourier series converges away from \(X\), then it is unique.
+
+- Proof by transfinite induction!
