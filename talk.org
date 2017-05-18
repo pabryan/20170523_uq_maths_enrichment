@@ -96,6 +96,7 @@ Let \(u(x, t) = \sum_{n=0}^{\infty} c_n e^{-n^2 t} \sin(n x)\) where \(\sum_{n=0
 - If so, are these constants unique? \pause
 - Does the series necessarily converge? \pause
 - Does \(T\) need to be continuous, differentiable, ...?
+** Spectral analysis and digital music
 * Cantor and Fourier series
 ** Cantor
 *** Image
@@ -143,6 +144,8 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
 
 *Then* \(c_n = c_n'\) and \(d_n = d_n'\) for every \(n\).
 
+** Convergence away from a finite set
+- Square wave
 ** Uniqueness of Fourier Series (Cantor) I: Proof
 - (Riemman) Let \(F(x) = \int \int f(x) dx = \frac{1}{2} (c_0 + d_0)x^2 - \sum_{n=1}^{\infty} \frac{1}{n^2} (c_n \sin(nx) + d_n \cos(nx))\) \pause
 - Formally \(F''(x) = f(x) = 0\) (\(=0\) by assumption) hence \(F(x) = Ax + B\) \pause
@@ -198,5 +201,5 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
 - Now proceed by induction:
   - Assume the result is true for \(n\)
   - If \(X\) is a derived set of the \((n+1)\)-th kind, then \(X^{(n+1)}\) is finite.
-  - Apply the same argument to \(X^{(n)}'\)
+  - Apply the same argument to \((X^{(n)})'\)
 * Ordinals and Cardinals
