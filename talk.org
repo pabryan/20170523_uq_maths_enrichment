@@ -1,5 +1,5 @@
 #+TITLE: \(\infty + 1\) and digital music?
-#+BEAMER_HEADER: \subtitle{UQ Maths Enrichment
+#+BEAMER_HEADER: \subtitle{UQ Maths Enrichment}
 #+AUTHOR: Paul Bryan
 #+EMAIL: pabryan@gmail.com
 #+DATE: May 23 2017
@@ -14,7 +14,87 @@
 
 #+LaTeX_HEADER: \input{local_definitions}
 
-* Introduction
 * Fourier, heat conduction and signal processing
+** Fourier
+*** Image
+  :PROPERTIES:
+  :BEAMER_col: 0.5
+  :END:
+
+#+CAPTION: Joseph Fourier \tiny{By User:Bunzil at en.wikipedia [Public domain], from Wikimedia Commons}
+[[file:img/fourier.jpg]]
+
+*** Text
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+- Born 21 March 1768
+- Died 16 May 1830 \pause
+- /Théorie de la Propagation de la Chaleur dans les Solides/ (On the Propagation of Heat in Solid Bodies) 1807
+  - not so influential \pause
+- /Théorie analytique de la chaleur/ (The Analytical Theory of Heat) 1822
+  - very influential
+** Fourier's Law of Heat Conduction
+- Based on Newton's law of cooling
+ - Change in thermal energy \(Q\) equals temperature difference \(\delta T\)
+ - \(\tfrac{d Q}{dt} = \delta T\) \pause
+*** Picture
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+Fourier's Law Picture
+\pause
+*** Text
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+- Fourier's Law:
+  - \(\vec{q} = - \nabla T\)
+  - Heat flux \(\vec{q}\) (heat flow across a surface) \pause
+  - Leads to the *heat equation*
+    \[
+    \partial_t T = \Delta T = \partial_x^2 T + \partial_y^2 T + \partial_z^2 T.
+    \]
+** Solving by infinite series I
+*** Text
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+- 1-dimensional model
+- \(T(x, t)\) temperature at position \(x\) and time \(t\)
+*** Picture
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+One dimensional heat flow picture \pause
+
+*** 
+\begin{align*}
+u_1(x, t) &= e^{-t} \sin(x) &\Rightarrow &\partial_t u_1 = -e^{t} \sin(x) = \partial_x^2 u_1 \\
+u_n(x, t) &= e^{-n^2 t} \sin(n x) &\Rightarrow &\partial_t u_n = \partial_x^2 u_n.
+\end{align*}
+\pause
+
+Let \(u(x, t) = \sum_{n=0}^{\infty} c_n e^{-n^2 t} \sin(n x)\) where \(\sum_{n=0}^{\infty} c_n < \infty\) \pause
+
+#+BEGIN_latex
+\[
+\begin{split}
+\partial_t u &= \sum_{n=0}^{\infty} \partial_t \left(c_n e^{-n^2 t} \sin(n x)\right) = \sum_{n=0}^{\infty} -n^2 c_n e^{-n^2 t} \sin(n x) \\
+&= \sum_{n=0}^{\infty} \partial_x^2 \left(c_n e^{-n^2 t} \sin(n x)\right) = \partial_x^2 u.
+\end{split}
+\]
+#+END_latex
+** Solving by infinite series II
+- Can also replace \(\sin\) by \(\cos\). \pause
+*** Questions
+- Does \(T = \sum e^{-n^2 t} (c_n \sin(nx) + d_n \cos(nx))\) for some constants \(c_n, d_n\)? \pause
+- If so, are these constants unique? \pause
+- Does the series necessarily converge? \pause
+- Does \(T\) need to be continuous, differentiable, ...?
 * Cantor and Fourier series
 * Ordinals and Cardinals
