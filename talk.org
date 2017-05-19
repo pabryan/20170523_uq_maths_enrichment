@@ -44,20 +44,20 @@
    :BEAMER_col: 0.5
    :END:
 
-Fourier's Law Picture
-\pause
-*** Text
+file:img/fourier_law.png
+
+*** Fourier's Law
    :PROPERTIES:
    :BEAMER_col: 0.5
+   :BEAMER_env: block
    :END:
 
-- Fourier's Law:
-  - \(\vec{q} = - \nabla T\)
-  - Heat flux \(\vec{q}\) (heat flow across a surface) \pause
-  - Leads to the *heat equation*
-    \[
-    \partial_t T = \Delta T = \partial_x^2 T + \partial_y^2 T + \partial_z^2 T.
-    \]
+- \(\vec{q} = - \nabla T\)
+- Heat flux \(\vec{q}\) (heat flow across a surface) \pause
+- Leads to the *heat equation*
+  \[
+  \partial_t T = \Delta T = \partial_x^2 T + \partial_y^2 T + \partial_z^2 T.
+  \]
 ** Solving by infinite series I
 *** Text
    :PROPERTIES:
@@ -70,7 +70,7 @@ Fourier's Law Picture
    :BEAMER_col: 0.5
    :END:
 
-One dimensional heat flow picture \pause
+[[file:img/heat_1d.jpg]]
 
 *** 
 \begin{align*}
@@ -90,13 +90,50 @@ Let \(u(x, t) = \sum_{n=0}^{\infty} c_n e^{-n^2 t} \sin(n x)\) where \(\sum_{n=0
 \]
 #+END_latex
 ** Solving by infinite series II
-- Can also replace \(\sin\) by \(\cos\). \pause
+- Can also use \(\cos\). \pause
 *** Questions
 - Does \(T = \sum e^{-n^2 t} (c_n \sin(nx) + d_n \cos(nx))\) for some constants \(c_n, d_n\)? \pause
 - If so, are these constants unique? \pause
 - Does the series necessarily converge? \pause
-- Does \(T\) need to be continuous, differentiable, ...?
+- Does \(T\) need to be continuous, differentiable, ...? \pause
+*** Answers
+- For another day!
+- We are interested in /uniqueness/
 ** Spectral analysis and digital music
+*** Fourier Transform of Audio Data
+**** Audio Data
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+[[file:img/wav.png]]
+
+**** Fourier Coefficients
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+[[file:img/wav_ft.png]]
+
+\pause
+
+*** Spectral lines for the sun
+
+**** The Sun
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+#+ATTR_LATEX: :width \textwidth :height 0.4\textheight :options keepaspectratio
+[[file:img/thesun.jpg]]
+
+**** Spectral Lines
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+
+[[file:img/spectral.png]]
+
 * Cantor and Fourier series
 ** Cantor
 *** Image
@@ -145,9 +182,16 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
 *Then* \(c_n = c_n'\) and \(d_n = d_n'\) for every \(n\).
 
 ** Convergence away from a finite set
-- Square wave
+- Square Wave
+  \[
+  f(x) = \begin{cases}
+  1, & -5 < x < 5 \\
+  0, & \text{otherwise}
+  \end{cases}
+  \]
+file:img/square_wave_fourier.png
 ** Uniqueness of Fourier Series (Cantor) I: Proof
-- (Riemman) Let \(F(x) = \int \int f(x) dx = \frac{1}{2} (c_0 + d_0)x^2 - \sum_{n=1}^{\infty} \frac{1}{n^2} (c_n \sin(nx) + d_n \cos(nx))\) \pause
+- \(F(x) = \int \int f(x) dx = \frac{1}{2} (c_0 + d_0)x^2 - \sum_{n=1}^{\infty} \frac{1}{n^2} (c_n \sin(nx) + d_n \cos(nx))\) \pause
 - Formally \(F''(x) = f(x) = 0\) (\(=0\) by assumption) hence \(F(x) = Ax + B\) \pause
 - But for all but at most finitely many \(x\),
   #+BEGIN_latex
@@ -159,6 +203,7 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
   \]
   #+END_latex
   \pause
+*** Coefficients Vanish
 - Therefore \(c_0 + d_0 = 0\), \(A = 0\) and \(B = 0\) \pause
   - Either send \(x \to \infty\) or note polynomials have at most finitely many roots. \pause
 - Further arguments give \(c_n = d_n = 0\) (not difficult but too far from our purpose here)
@@ -192,10 +237,11 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
 *Then* \(c_n = c_n'\) and \(d_n = d_n'\) for every \(n\).
 
 ** Uniqueness of Fourier Series (Cantor) II: Proof
-- Suppose \(X' = \{x_1, \cdots, x_k\}\) has only finitely many points.
+- Suppose first that \(X' = \{x_1, \cdots, x_k\}\) has only finitely many points.
 - Order these points \(x_1 < x_2 < \cdots x_{k-1} < x_k\). \pause
 - Consider \(a, b\) with \(x_i < a < b < x_{i+1}\), i.e. \((a,b) \subsetneq (x_i, x_{i+1})\) \pause
-- Claim: \((a, b)\) contains at most finitely many points from \(X\) \pause
+*** The Proof
+- \((a, b)\) contains at most finitely many points from \(X\) \pause
   - For otherwise, there we would be a limit point of \(X\) contained in \((a, b)\)! (Heine-Borel Theorem)
 - The previous result applies and \(F\) is linear, once again giving the result. \pause
 - Now proceed by induction:
