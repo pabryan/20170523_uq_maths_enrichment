@@ -248,7 +248,7 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
   - Assume the result is true for \(n\)
   - If \(X\) is a derived set of the \((n+1)\)-th kind, then \(X^{(n+1)}\) is finite.
   - Apply the same argument to \((X^{(n)})'\)
-* Ordinals and Cardinals
+* Derived sets and Ordinals
 ** Higher Derived Sets
 *** The first infinite ordinal \(\omega\)
 \[
