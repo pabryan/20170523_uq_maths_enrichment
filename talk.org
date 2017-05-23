@@ -216,20 +216,20 @@ file:img/square_wave_fourier.png
   i.e. every interval containing \(y\) contains a point in \(X\), not equal to \(y\) \pause
 - First derived set: \(X' = \{\) limit points of \(X\}\). \pause
 - Second derived set: \(X'' = (X')'\). \pause
-- \(n\)-th derived set: \(X^{(n)} = (X^{(n-1)})'\). \pause
+- \(m\)-th derived set: \(X^{(m)} = (X^{(m-1)})'\). \pause
 *** Example
 - \(A_i = \{\frac{1}{n} + \frac{1}{i} : n > i(i-1), n \in \NN\} \subseteq [\tfrac{1}{i}, \frac{1}{i-1}]\)
 - \(A = \union_{i=2}^{\infty} A_i\)
 - \(A' = \{0\} \union \{\frac{1}{n} : n \geq 2, n \in \NN\}\), \(A'' = \{0\}\), \(A''' = \emptyset\).
 ** Uniqueness of Fourier Series (Cantor) II
-A set \(X\) is called a /derived set of the \(n\)-th kind/ if \(X^{(n)}\) is a finite set. \pause
+A set \(X\) is called a /derived set of the \(m\)-th kind/ if \(X^{(m)}\) is a finite set. \pause
 - The set \(A\) on the previous slide is an /infinite/ derived set of the second kind.
-- If \(X\) is a derived set of the \(n\)-th kind, then \(X^{(n+1)} = \emptyset\) since \(Y' = \emptyset\) for \(Y\) finite. \pause
+- If \(X\) is a derived set of the \(m\)-th kind, then \(X^{(m+1)} = \emptyset\) since \(Y' = \emptyset\) for \(Y\) finite. \pause
 *** Cantor
     :PROPERTIES:
     :BEAMER_env: theorem
     :END:
-*If* for all \(x \in [0, 2\pi]\) except for \(x \in X\) where \(X\) is a derived set of the \(n\)'th kind for some \(n\),
+*If* for all \(x \in [0, 2\pi]\) except for \(x \in X\) where \(X\) is a derived set of the \(m\)'th kind for some \(m\),
 \[
 f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
 \]
@@ -245,9 +245,9 @@ f(x) = \sum c_n \sin(nx) + d_n \cos(nx) = \sum c_n' \sin(nx) + d_n' \cos(nx)
   - For otherwise, there we would be a limit point of \(X\) contained in \((a, b)\)! (Heine-Borel Theorem)
 - The previous result applies and \(F\) is linear, once again giving the result. \pause
 - Now proceed by induction:
-  - Assume the result is true for \(n\)
-  - If \(X\) is a derived set of the \((n+1)\)-th kind, then \(X^{(n+1)}\) is finite.
-  - Apply the same argument to \((X^{(n)})'\)
+  - Assume the result is true for \(m\)
+  - If \(X\) is a derived set of the \((m+1)\)-th kind, then \(X^{(m+1)}\) is finite.
+  - Apply the same argument to \((X^{(m)})'\)
 * Derived sets and Ordinals
 ** Higher Derived Sets
 *** The first infinite ordinal \(\omega\)
@@ -272,7 +272,7 @@ X^{(\omega + 2)} = (X^{(\omega+1)})'
     :PROPERTIES:
     :BEAMER_env: definition
     :END:
-- \(X\) is a set such that \(\forall x \in A\), \(x \subseteq A\)
+- \(X\) is a set such that \(\forall x \in X\), \(x \subseteq X\)
 - \(X\) is well ordered: We can order \(X\) such that every subset \(Y \subseteq X\) has a least element. \pause
 *** Finite Ordinals
 - \(0 = \emptyset\) \quad \(0\) elements \pause
@@ -304,7 +304,7 @@ An ordinal \(X\) is a limit ordinal if \(X \ne Y + 1 := Y \union \{Y\}\) for any
 ** Induction
 *** Induction
 
-If \(P(0)\) is true and \(P(n) \Rightarrow P(n+1)\), then \(P(m)\) is true for all \(m \in \NN\) \pause
+*If* \(P(0)\) is true and \(P(n) \Rightarrow P(n+1)\), *then* \(P(m)\) is true for all \(m \in \NN\) \pause
 
 *** Example
 
